@@ -19,12 +19,16 @@ addToCart(product) {
     this.items.push(product);
   }
 
-  getItems() {
+getItems() {
     return this.items;
   }
 
   clearCart() {
     this.items = [];
     return this.items;
+  }
+
+  getDemoData(){
+   return this.http.get('/api/Product')
   }
 }

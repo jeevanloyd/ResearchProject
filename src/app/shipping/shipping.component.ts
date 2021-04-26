@@ -8,6 +8,7 @@ import { CartService } from '../cart.service';
 
 export class ShippingComponent  {
   shippingCosts = this.cartService.getShippingPrices();
+  costfromDb =this.cartService.getDemoData();
   constructor(private cartService: CartService) { 
 
   }
