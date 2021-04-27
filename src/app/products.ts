@@ -1,46 +1,33 @@
 export const products = [
     {
       id: 1,
-      name: 'Phone XL',
-      price: 799,
-      description: 'A large phone with one of the best screens'
+      name: 'iphone',
+      price: 2000,
+      quantityLeft: 3,
+      description: 'Latest phones from apple'
     },
     {
       id: 2,
-      name: 'Phone Mini',
-      price: 699,
-      description: 'A great phone with one of the best cameras'
+      name: 'Samsung s20',
+      price: 1589,
+      quantityLeft: 6,
+      description: 'fast charging'
     },
     {
       id: 3,
-      name: 'Phone Standard',
-      price: 299,
-      description: ''
+      name: 'Samsung note4',
+      price: 3000,
+      quantityLeft: 8,
+      description: 'bigger screen'
     },
     {
-        id: 4,
-        name: 'phone holder',
-        price: 1000,
-        description: ''
-      },
-      {
-        id: 5,
-        name: 'One +8',
-        price: 80,
-        description: 'Cheap and best'
-      },
-      {
-        id: 6,
-        name: 'Jabra elite',
-        price: 600,
-        description: 'noise cancellation earpods'
-      },
-      {
-        id: 7,
-        name: 'Airpods',
-        price: 400,
-        description: 'best Aipods'
-      }
+      id: 4,
+      name: 'one plus ',
+      price: 1004,
+      quantityLeft: 4,
+      description: 'cheap and best'
+    },
+    
   ];
   
   

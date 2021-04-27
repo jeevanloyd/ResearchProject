@@ -31,4 +31,7 @@ getItems() {
   getDemoData(){
    return this.http.get('/api/Product')
   }
+  getShippingData(){
+    return this.http.get('/api/shipping/Shipping')
+   }
 }

@@ -5,11 +5,18 @@
 </p>
 
 <div class="cart-item" *ngFor="let item of items">
+  <span>{{ item.id }} </span>
   <span>{{ item.name }} </span>
-  <span>{{ item.price | currency }}</span>
+  <span>{{ item.price | currency }}</span> 
+
+</div>
+<span>Total cost after Discount : {{totalItemCost()}}</span>
+
+<div>
+  <span> shipping cost : 100 $</span>
   
 </div>
-
+<div>Final Price after shipping Charges : {{getshippingdiscount()}} $ </div>
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
 
   <div>

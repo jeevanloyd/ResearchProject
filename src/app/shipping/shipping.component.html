@@ -2,8 +2,9 @@
 
 
 
-<div class="shipping-item" *ngFor="let shipping of costfromDb | async">
-  <span>{{ shipping.name}}</span>
+<div class="shipping-item" *ngFor="let shipping of shippingCosts | async">
+  <span>{{ shipping.method}}</span>
   <span>{{ shipping.price}}</span>
-  <span>{{ shipping.quantityLeft}}</span>
+  <span>{{ shipping.available}}</span>
+  <span>{{ shipping.time }}days</span>
 </div>
