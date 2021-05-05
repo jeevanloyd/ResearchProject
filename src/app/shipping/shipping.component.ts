@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { CartService } from '../cart.service';
+import { Shipping } from '../api/shopping-models';
+import { ShippingService } from '../api/models/shipping/shipping.service';
 @Component({
   selector: "app-shipping",
   templateUrl: "./shipping.component.html",
@@ -7,10 +8,13 @@ import { CartService } from '../cart.service';
 })
 
 export class ShippingComponent  {
-  shippingCosts = this.cartService.getShippingData();
-  costfromDb =this.cartService.getDemoData();
-  constructor(private cartService: CartService) { 
-
+  public shippingcost:Shipping[];
+  constructor(private shippingService: ShippingService) { 
+      this.shippingService.query().subscribe(
+        (response: Shipping[]) => {
+          this.shippingcost = response;
+        }
+      );
   }
 
 

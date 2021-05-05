@@ -11,6 +11,12 @@ import { ProductAlertsComponent } from './product-alerts/product-alerts.componen
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
+import { EntityService } from './api/entity.service';
+import { Entity } from './api/entity';
+import { CachedEntityService } from './api/cached-entity.service';
+import { Product } from './api/shopping-models';
+import { ProductService } from './api/models/product/product.service';
+import { ShippingService } from './api/models/shipping/shipping.service';
 @NgModule({
   imports: [
     BrowserModule,
@@ -30,7 +36,12 @@ import { ShippingComponent } from './shipping/shipping.component';
     ProductAlertsComponent,
     ProductDetailsComponent,
     CartComponent,
+    
     ShippingComponent
+  ],
+  providers:[
+    ProductService,
+    ShippingService
   ],
   bootstrap: [
     AppComponent

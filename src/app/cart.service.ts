@@ -12,26 +12,9 @@ export class CartService {
   constructor( private http: HttpClient) {
     
   }
-  getShippingPrices() {
-    return this.http.get<{type: string, price: number}[]>('/assets/shipping.json');
-  }
-addToCart(product) {
-    this.items.push(product);
-  }
-
-getItems() {
-    return this.items;
-  }
-
   clearCart() {
     this.items = [];
     return this.items;
   }
 
-  getDemoData(){
-   return this.http.get('/api/Product')
-  }
-  getShippingData(){
-    return this.http.get('/api/shipping/Shipping')
-   }
 }

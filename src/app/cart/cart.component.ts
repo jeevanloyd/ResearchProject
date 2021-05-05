@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { CartService } from '../cart.service';
 import { FormBuilder } from '@angular/forms';
-
+import { ProductService } from '../api/models/product/product.service';
+//import { Shipping } from '../api/shopping-models';
+//import { ShippingService } from '../api/models/shipping/shipping.service';
 @Component({
   selector: "app-cart",
   templateUrl: "./cart.component.html",
@@ -9,15 +11,18 @@ import { FormBuilder } from '@angular/forms';
 })
 
 export class CartComponent  {
-   totalcost=0;
-  items = this.cartService.getItems();
-  shippingcost=this.cartService.getShippingData();
+  totalcost=0;
+  items = this.productService.getItems();
+  
   checkoutForm = this.formBuilder.group({
     name: '',
     address: ''
   });
   constructor(private cartService: CartService, 
-    private formBuilder: FormBuilder,) { 
+    private formBuilder: FormBuilder,
+    private productService: ProductService) { 
+      
+      
 
   }
   totalItemCost(){
@@ -55,7 +60,6 @@ return finalcost;
     // Process checkout data here
     this.items = this.cartService.clearCart();
     console.warn('Your order has been submitted', this.checkoutForm.value);
-    window.alert(this.shippingcost);
     this.checkoutForm.reset();
   }
   
